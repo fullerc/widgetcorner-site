@@ -115,22 +115,24 @@
     .stores {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
+      gap: 0.5rem;
+      align-items: center;
       margin-top: 0.5rem;
     }
     .stores a {
       display: inline-block;
-      padding: 0.6rem 1rem;
-      border: 1px solid var(--rule);
-      border-radius: 8px;
+      line-height: 0;
       text-decoration: none;
-      color: var(--fg);
-      font-size: 0.95rem;
+      transition: opacity 0.15s;
     }
-    .stores a:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+    .stores a:hover { opacity: 0.85; }
+    .stores a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+      border-radius: 6px;
     }
+    .stores .apple-badge { height: 40px; width: auto; display: block; }
+    .stores .google-badge { height: 60px; width: auto; display: block; }
     .links a + a { margin-left: 1rem; }
     footer {
       border-top: 1px solid var(--rule);
@@ -171,7 +173,7 @@
           <li><strong>Reminders.</strong> Local notifications at start time or a custom number of minutes ahead. No account, no push server.</li>
           <li><strong>Venue map with “you are here.”</strong> Color-coded pins for Stages, Gaming, Parties, Outdoors, and Stay &amp; Eat. Location use is opt-in.</li>
           <li><strong>Tap to explore.</strong> See what’s happening at each venue. Jump from any session to its venue pin.</li>
-          <li><strong>Session tags.</strong> Ages 21+, PG-13, Apprentice Track, Auditioned/Casted, Sensory Friendly, Sign-up at Open Gaming.</li>
+          <li><strong>Session tags.</strong> Ages 21+, PG-13, Apprentice Track, Sensory Friendly, Sign-up at Open Gaming.</li>
           <li><strong>Discord link and sync status.</strong> Quick community access and a clear last-synced indicator.</li>
         </ul>
       </section>
@@ -187,9 +189,16 @@
       <section aria-labelledby="download-heading">
         <h2 id="download-heading">Download</h2>
         <div class="stores">
-          <a href="https://apps.apple.com/us/app/play-on-con/id6782482020">App Store (iOS)</a>
+          <a href="https://apps.apple.com/us/app/play-on-con/id6782482020" aria-label="Download Play On Con on the App Store">
+            <picture>
+              <source srcset="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/white/en-us?size=250x83" media="(prefers-color-scheme: dark)">
+              <img class="apple-badge" src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store">
+            </picture>
+          </a>
           <!-- TODO: replace # with the Play Store URL once published -->
-          <a href="#">Google Play (Android)</a>
+          <a href="#" aria-label="Get Play On Con on Google Play">
+            <img class="google-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+          </a>
         </div>
       </section>
 
