@@ -3,10 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Widget Corner — Support</title>
-  <meta name="description" content="Support for apps by Widget Corner LLC. Contact information, response times, and per-app help links.">
+  <title>Lock It Up — Support</title>
+  <meta name="description" content="Help and support for Lock It Up, the Spades scorekeeping app for iPhone and Android.">
   <meta name="color-scheme" content="light dark">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' ry='22' fill='%235b4fe5'/%3E%3Cpath d='M30 28 h28 l12 12 v32 a4 4 0 0 1 -4 4 h-36 a4 4 0 0 1 -4 -4 v-40 a4 4 0 0 1 4 -4 z' fill='%23ffffff'/%3E%3Cpath d='M58 28 v8 a4 4 0 0 0 4 4 h8 z' fill='%23d6d6dc'/%3E%3C/svg%3E">
   <style>
     :root {
       --bg: #f7f7f9;
@@ -99,24 +98,12 @@
       font-weight: 600;
     }
     p { margin: 0 0 1rem; }
-    .apps {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .apps li {
+    .faq-item {
       padding: 1rem 0;
       border-bottom: 1px solid var(--rule);
     }
-    .apps li:last-child { border-bottom: none; }
-    .apps h3 a {
-      color: var(--fg);
-      text-decoration: none;
-    }
-    .apps h3 a:hover { color: var(--accent); }
-    .apps p { margin: 0 0 0.4rem; color: var(--muted); font-size: 0.95rem; }
-    .apps .app-links { font-size: 0.9rem; }
-    .apps .app-links a + a { margin-left: 1rem; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item p:last-child { margin: 0; }
     .contact dl { margin: 0; }
     .contact dt {
       font-weight: 600;
@@ -147,12 +134,58 @@
 <body>
   <div class="page">
     <header>
-      <p class="brand"><a href="../">Widget Corner</a></p>
+      <p class="brand"><a href="../">Lock It Up</a></p>
       <h1>Support</h1>
-      <p class="tagline">Help with apps by Widget Corner LLC. Contact us by email or find per-app help below.</p>
+      <p class="tagline">Help with Lock It Up — common questions about scoring, sync, and your data.</p>
     </header>
 
     <main>
+      <section aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Frequently asked</h2>
+
+        <div class="faq-item">
+          <h3>Which devices can run Lock It Up?</h3>
+          <p>Version 1 supports iPhone on iOS 26 or later and Android phones on Android 8.0 or later. The initial release uses portrait phone layouts.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Do I need a Widget Corner account?</h3>
+          <p>No. Lock It Up does not create a Widget Corner account and has no subscription, advertising, or marketing login. iCloud or Google Play Games authentication is used only by the platform’s optional completed-game sync.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What syncs between devices?</h3>
+          <p>Only completed-game history that has been confirmed by choosing Rematch or New Game is eligible to sync. Rules, active games, paused games, and a newly completed result that has not yet been confirmed stay on the device. iPhones sync only with other iPhones through the user’s private CloudKit database; Android devices sync only with Android devices through Google Play Games.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Sync is not working.</h3>
+          <p>Scoring still works without sync. On iPhone, confirm both devices use the same Apple Account, can access iCloud, and have a network connection, then reopen Lock It Up. On Android, open Stats and use the sync control to sign in to Google Play Games or retry after reconnecting.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How do I correct a scoring mistake?</h3>
+          <p>During an active game, use Undo to clear the current bids or remove the last scored round, then enter it again. Lock It Up recalculates the score from the remaining rounds.</p>
+
+        </div>
+
+        <div class="faq-item">
+          <h3>Can I export or delete completed stats on iPhone?</h3>
+          <p>Yes. Open Stats, then choose Export completed games for a shareable JSON file. Choose Delete completed stats to remove completed history from that iPhone and the user’s private CloudKit database. Active and paused games are preserved.</p>
+
+        </div>
+
+        <div class="faq-item">
+          <h3>How do I permanently remove Android history?</h3>
+          <p>First close Lock It Up. Clear its app storage or uninstall it on every Android device that still has local Lock It Up history, and do not reopen it. Then delete Lock It Up’s per-game data from your Google Play Games profile. Clearing storage removes local rules and games in progress too. If a device retains local completed history, opening it can recreate the cloud save.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How do I report a bug or request a feature?</h3>
+          <p>Email <a href="mailto:support@widgetcorner.com">support@widgetcorner.com</a>. Include your device model and OS version if possible.</p>
+        </div>
+      </section>
+
       <section class="contact" aria-labelledby="contact-heading">
         <h2 id="contact-heading">Contact</h2>
         <dl>
@@ -160,44 +193,12 @@
           <dd><a href="mailto:support@widgetcorner.com">support@widgetcorner.com</a></dd>
           <dt>Response time</dt>
           <dd>Usually within a few business days.</dd>
-          <dt>Location</dt>
-          <dd>Atlanta, Georgia, USA</dd>
         </dl>
-      </section>
-
-      <section aria-labelledby="apps-heading">
-        <h2 id="apps-heading">App support</h2>
-        <p>Each app has its own support page with common questions and troubleshooting steps.</p>
-        <ul class="apps">
-          <li>
-            <h3><a href="../playoncon/support/">Play On Con</a></h3>
-            <p>Schedule, reminders, offline sync, location, and account questions.</p>
-            <p class="app-links">
-              <a href="../playoncon/">App overview</a>
-              <a href="../playoncon/support/">Support</a>
-              <a href="../playoncon/privacy/">Privacy</a>
-            </p>
-          </li>
-          <li>
-            <h3><a href="../lockitup/support/">Lock It Up</a></h3>
-            <p>Spades scoring, house rules, same-platform sync, export, and data deletion.</p>
-            <p class="app-links">
-              <a href="../lockitup/">App overview</a>
-              <a href="../lockitup/support/">Support</a>
-              <a href="../lockitup/privacy/">Privacy</a>
-            </p>
-          </li>
-        </ul>
-      </section>
-
-      <section aria-labelledby="reporting-heading">
-        <h2 id="reporting-heading">Reporting a bug</h2>
-        <p>Email <a href="mailto:support@widgetcorner.com">support@widgetcorner.com</a> with a short description of what happened and what you expected. Including your device model, OS version, and app version helps us reproduce the issue faster.</p>
       </section>
     </main>
 
     <footer>
-      <p><a href="../">Back to Widget Corner</a></p>
+      <p><a href="../">Back to Lock It Up</a> &middot; <a href="../privacy/">Privacy</a></p>
       <p>&copy; 2026 Widget Corner LLC</p>
     </footer>
   </div>
